@@ -1,3 +1,5 @@
+import textwrap
+
 from django.contrib.auth import get_user_model
 from django.db import models
 
@@ -24,7 +26,7 @@ class Post(models.Model):
                               related_name="posts",)
 
     def __str__(self):
-        return self.text
+        return textwrap.shorten(self.text, width=15)
 
 
 class Comment(models.Model):
@@ -38,6 +40,9 @@ class Comment(models.Model):
     created = models.DateTimeField(
         "Дата добавления", auto_now_add=True, db_index=True
     )
+
+    def __str__(self):
+        return textwrap.shorten(self.text, width=15)
 
 
 class Follow(models.Model):
