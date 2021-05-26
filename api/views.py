@@ -4,7 +4,7 @@ from rest_framework.permissions import (
     IsAuthenticated, IsAuthenticatedOrReadOnly,
 )
 
-from .models import Follow, Group, Post
+from .models import Group, Post
 from .permissions import IsAuthorOrReadOnly
 from .serializers import (
     CommentSerializer, FollowSerializer, GroupSerializer, PostSerializer,
