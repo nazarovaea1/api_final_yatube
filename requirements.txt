@@ -4,3 +4,4 @@ pytest
 pytest-django
 djangorestframework
 djangorestframework-simplejwt
+pip==21.0.1
